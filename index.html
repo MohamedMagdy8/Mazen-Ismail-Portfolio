@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazen Ismail Ali | Executive Data Analytics & Business Intelligence Dashboard</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Mazen Ismail Ali, a specialized Data Analyst & BI Developer. Interactive executive dashboard showcasing HR analytics, sales forecasting, customer churn models, and professional datasets.">
+    <meta name="keywords"
+        content="Mazen Ismail Ali, Data Analyst, Business Intelligence, Power BI, SQL Analytics, Python, Tableau, Dashboard, Data Storytelling, Data Science, Portfolio">
+    <meta name="author" content="Mazen Ismail Ali">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Mazen Ismail Ali | Business Intelligence Portfolio">
+    <meta property="og:description"
+        content="Real-time Executive BI Dashboard & Portfolio of Mazen Ismail Ali, Computer Science & Data Science specialist.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./Mazen.jpeg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for additional brand icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Core Style sheets -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-theme">
+
+    <!-- Interactive AI Canvas Background -->
+    <canvas id="dashboard-node-bg"></canvas>
+
+    <!-- Glowing Grid Backdrop Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Scanline effect for terminal feel -->
+    <div class="scanlines"></div>
+
+    <!-- Floating Navigation Bar -->
+    <nav class="floating-nav" id="floating-navbar">
+        <div class="nav-branding">
+            <span class="pulse-indicator"></span>
+            <span class="brand-text">Mazen_Ismail</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-item active" data-tab="hero"><i data-lucide="terminal"></i> Console</a>
+            <a href="#about" class="nav-item" data-tab="about"><i data-lucide="user"></i> Profile</a>
+            <a href="#capabilities" class="nav-item" data-tab="capabilities"><i data-lucide="cpu"></i> Capabilities</a>
+            <a href="#projects" class="nav-item" data-tab="projects"><i data-lucide="bar-chart-3"></i> Projects</a>
+            <a href="#story" class="nav-item" data-tab="story"><i data-lucide="book-open"></i> Storytelling</a>
+            <a href="#github" class="nav-item" data-tab="github"><i data-lucide="github"></i> Github</a>
+            <a href="#experience" class="nav-item" data-tab="experience"><i data-lucide="briefcase"></i> Experience</a>
+            <a href="#contact" class="nav-item" data-tab="contact"><i data-lucide="send"></i> Terminal Contact</a>
+        </div>
+        <div class="nav-utility">
+            <span class="system-time" id="live-clock">22:28:45</span>
+            <span class="db-status"><span class="status-dot"></span> DEV_SRV: 3ms</span>
+        </div>
+    </nav>
+
+    <!-- Side Metrics Panel -->
+    <aside class="side-metrics" aria-label="System status">
+        <div class="metric-container">
+            <div class="metric-label">NETWORK LATENCY</div>
+            <div class="metric-value" id="ping-metric">12 ms</div>
+        </div>
+        <div class="metric-container">
+            <div class="metric-label">CPU CORE LOAD</div>
+            <div class="metric-value" id="cpu-metric">1.8%</div>
+        </div>
+        <div class="metric-container">
+            <div class="metric-label">ENGINE</div>
+            <div class="metric-value">FABRIC_v3.2</div>
+        </div>
+    </aside>
+
+    <!-- Main Workspace Container -->
+    <main class="workspace" id="main-content">
+
+        <!-- ================= HERO SECTION ================= -->
+        <section id="hero" class="dashboard-section active-section">
+            <div class="section-badge">SYSTEM // INITIAL_PROMPT</div>
+
+            <div class="hero-grid">
+                <div class="hero-left glass-card">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <span class="terminal-title">MAZEN_SHELL.sh</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line"><span class="t-prompt">$</span> npm run init-insights</div>
+                        <div class="terminal-line t-output">Initializing Data Pipeline... Done.</div>
+                        <div class="terminal-line t-output">Mounting Business Intelligence engine... Connected.</div>
+
+                        <div class="headline-container">
+                            <h1 class="glow-title">Transforming Data Into <span class="gradient-text">Business
+                                    Decisions</span></h1>
+                            <p class="subtitle-story">Data Analyst | Business Intelligence Analyst | Data Storyteller
+                            </p>
+                        </div>
+
+                        <!-- Terminal interactive command line -->
+                        <div class="cli-terminal">
+                            <div class="cli-log" id="terminal-history">
+                                <p class="cli-info">Welcome to Mazen's BI Console. Type <span
+                                        class="cli-cmd">/help</span> to view available terminal inputs.</p>
+                            </div>
+                            <form id="terminal-form" class="cli-input-line">
+                                <span class="t-prompt">></span>
+                                <input type="text" id="terminal-input" autocomplete="off"
+                                    placeholder="Enter command (e.g. /projects, /skills)..."
+                                    aria-label="Terminal command input">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animated KPI Cards Grid -->
+                <div class="hero-right">
+                    <div class="kpi-grid">
+                        <div class="kpi-card glass-card scroll-reveal" id="kpi-projects">
+                            <div class="kpi-header">
+                                <span class="kpi-label">PORTFOLIO PROJECTS</span>
+                                <i data-lucide="layers" class="kpi-icon"></i>
+                            </div>
+                            <div class="kpi-value"><span class="counter" data-target="4">0</span>+</div>
+                            <div class="kpi-chart-mini"><canvas id="mini-chart-projects"></canvas></div>
+                            <div class="kpi-footer text-cyan">▲ 100% completion rate</div>
+                        </div>
+
+                        <div class="kpi-card glass-card scroll-reveal" id="kpi-datasets">
+                            <div class="kpi-header">
+                                <span class="kpi-label">DATASETS PROCESSED</span>
+                                <i data-lucide="database" class="kpi-icon"></i>
+                            </div>
+                            <div class="kpi-value"><span class="counter" data-target="5">0</span>+</div>
+                            <div class="kpi-chart-mini"><canvas id="mini-chart-datasets"></canvas></div>
+                            <div class="kpi-footer text-purple">▲ Large-scale cleaning & ETL</div>
+                        </div>
+
+                        <div class="kpi-card glass-card scroll-reveal" id="kpi-dashboards">
+                            <div class="kpi-header">
+                                <span class="kpi-label">POWER BI DASHBOARDS</span>
+                                <i data-lucide="layout" class="kpi-icon"></i>
+                            </div>
+                            <div class="kpi-value"><span class="counter" data-target="3">0</span>+</div>
+                            <div class="kpi-chart-mini"><canvas id="mini-chart-dashboards"></canvas></div>
+                            <div class="kpi-footer text-blue">▲ Executive ready visuals</div>
+                        </div>
+
+                        <div class="kpi-card glass-card scroll-reveal" id="kpi-gpa">
+                            <div class="kpi-header">
+                                <span class="kpi-label">PERFORMANCE INDEX (GPA)</span>
+                                <i data-lucide="award" class="kpi-icon"></i>
+                            </div>
+                            <div class="kpi-value"><span class="counter-float" data-target="3.2">0.0</span>/4.0</div>
+                            <div class="kpi-chart-mini"><canvas id="mini-chart-gpa"></canvas></div>
+                            <div class="kpi-footer text-green">▲ Top percentile performance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT SECTION ================= -->
+        <section id="about" class="dashboard-section">
+            <div class="section-badge">USER_PROFILE // EXECUTIVE_SUMMARY</div>
+
+            <div class="about-grid">
+                <div class="about-card-left glass-card">
+                    <div class="profile-frame">
+                        <div class="scan-overlay"></div>
+                        <img src="./Mazen.jpeg" alt="Mazen Ismail Ali" class="profile-image">
+                    </div>
+                    <div class="profile-quick-details">
+                        <h2 class="profile-name">Mazen Ismail Ali</h2>
+                        <div class="profile-title">Computers & Data Science Student</div>
+                        <div class="profile-org"><i data-lucide="graduation-cap"></i> Data Science Faculty</div>
+                    </div>
+                </div>
+
+                <div class="about-card-right glass-card">
+                    <div class="terminal-header">
+                        <span class="terminal-title">PROFILE_DETAILS.JSON</span>
+                    </div>
+                    <div class="profile-tabs">
+                        <div class="profile-json">
+                            <pre><code>{
+  <span class="json-key">"education"</span>: {
+    <span class="json-key">"major"</span>: <span class="json-val">"Computers and Data Science"</span>,
+    <span class="json-key">"status"</span>: <span class="json-val">"Undergraduate"</span>
+  },
+  <span class="json-key">"specialization"</span>: [
+    <span class="json-val">"Data Science"</span>,
+    <span class="json-val">"Decision Support Systems"</span>
+  ],
+  <span class="json-key">"core_pillars"</span>: [
+    <span class="json-val">"Data Storytelling"</span>,
+    <span class="json-val">"Dashboard Development"</span>,
+    <span class="json-val">"Data-Driven Decisions"</span>
+  ],
+  <span class="json-key">"philosophy"</span>: <span class="json-val">"I design systems that translate raw transactional noise into structured actionable strategies. Moving beyond standard analytics, I focus on synthesizing raw numbers into concrete metrics that enable executives to deploy capital and resources optimally."</span>
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CAPABILITIES & SKILLS ================= -->
+        <section id="capabilities" class="dashboard-section">
+            <div class="section-badge">CAPABILITY_MATRIX // SYSTEM_COMPETENCE</div>
+
+            <div class="skills-layout">
+                <!-- Competency Highlights -->
+                <div class="capabilities-grid">
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="bar-chart-3"></i></div>
+                        <h3>Data Analytics</h3>
+                        <p>Converting chaotic data arrays into polished trends, statistical reports, and regression
+                            charts.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="trending-up"></i></div>
+                        <h3>Business Intelligence</h3>
+                        <p>Constructing multi-dimensional business models and strategic pipelines to analyze company
+                            KPIs.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="layout"></i></div>
+                        <h3>Power BI Development</h3>
+                        <p>Creating highly functional dashboards using DAX patterns and automated queries.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="database"></i></div>
+                        <h3>SQL Analytics</h3>
+                        <p>Extracting, modeling, and optimizing complex database scripts for high-frequency reports.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="line-chart"></i></div>
+                        <h3>Data Visualization</h3>
+                        <p>Transforming metrics into aesthetic UI visual systems that display actionable alerts.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="wand2"></i></div>
+                        <h3>Dashboard Design</h3>
+                        <p>Crafting sleek design frameworks with UI/UX paradigms optimized for executive viewing.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="sparkles"></i></div>
+                        <h3>Data Cleaning</h3>
+                        <p>Identifying duplicates, anomalies, null errors, and preparing normalized data pools.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="refresh-cw"></i></div>
+                        <h3>ETL Processes</h3>
+                        <p>Extracting, transforming, and loading structured datasets seamlessly across data
+                            repositories.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="target"></i></div>
+                        <h3>KPI Development</h3>
+                        <p>Defining customized target metrics aligned with corporate OKRs and operational health
+                            indexes.</p>
+                    </div>
+                    <div class="capability-card glass-card">
+                        <div class="cap-icon-box"><i data-lucide="book-open"></i></div>
+                        <h3>Data Storytelling</h3>
+                        <p>Narrating core financial/retention developments using clean, dynamic dashboard structures.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interactive Skills Console -->
+                <div class="skills-console glass-card">
+                    <div class="console-controls">
+                        <button class="skill-tab active" data-category="programming">Programming</button>
+                        <button class="skill-tab" data-category="analytics">Analytics</button>
+                        <button class="skill-tab" data-category="visualization">Visualization</button>
+                        <button class="skill-tab" data-category="cloud">Cloud & Big Data</button>
+                    </div>
+
+                    <div class="skills-chart-area">
+                        <!-- Progress meters that load dynamically -->
+                        <div class="skills-grid active-skills" id="skills-programming">
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Python</span><span class="skill-pct">85%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>SQL</span><span class="skill-pct">90%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>R Programming</span><span class="skill-pct">70%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Java</span><span class="skill-pct">75%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>C++</span><span class="skill-pct">80%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-grid hide" id="skills-analytics">
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Pandas & NumPy</span><span class="skill-pct">88%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Power BI</span><span class="skill-pct">92%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Power Query (M)</span><span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>DAX Expressions</span><span class="skill-pct">87%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 87%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Advanced Excel</span><span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-grid hide" id="skills-visualization">
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Matplotlib & Seaborn</span><span
+                                        class="skill-pct">85%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Plotly & Dash</span><span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Power BI Report Server</span><span
+                                        class="skill-pct">85%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-grid hide" id="skills-cloud">
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>AWS (S3, EC2)</span><span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>Apache Spark</span><span class="skill-pct">70%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>MS SQL Server</span><span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress-card">
+                                <div class="skill-info"><span>MySQL</span><span class="skill-pct">85%</span></div>
+                                <div class="skill-bar-outer">
+                                    <div class="skill-bar-inner" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS: BI SIMULATOR ================= -->
+        <section id="projects" class="dashboard-section">
+            <div class="section-badge">ANALYTICS_SANDBOX // BI_SIMULATOR_DASHBOARD</div>
+
+            <div class="bi-dashboard-container glass-card">
+                <!-- Power BI Like Toolbar -->
+                <div class="pbi-toolbar">
+                    <div class="pbi-file-menu">
+                        <span class="pbi-menu-item active-menu"><i data-lucide="file-text"></i>
+                            Interactive_Report.pbix</span>
+                        <span class="pbi-menu-item"><i data-lucide="database"></i> Fabric_Lakehouse</span>
+                        <span class="pbi-menu-item"><i data-lucide="git-pull-request"></i> Live_Data_Pipeline</span>
+                    </div>
+                    <div class="pbi-slicer-panel">
+                        <label for="cohort-filter" class="slicer-label"><i data-lucide="filter"></i> Cohort
+                            Filter:</label>
+                        <select id="cohort-filter" class="pbi-select" aria-label="Filter cohort dataset">
+                            <option value="all">Global Dataset (Raw)</option>
+                            <option value="q1">Q1 Fiscal Target</option>
+                            <option value="q2">Q2 Fiscal Target</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pbi-layout">
+                    <!-- Sidebar pages (Select Projects) -->
+                    <aside class="pbi-sidebar" aria-label="Project report pages">
+                        <div class="pbi-sidebar-header">Pages</div>
+                        <button class="pbi-page-tab active" data-project="project1">
+                            <i data-lucide="users-2"></i> HR Attrition Analytics
+                        </button>
+                        <button class="pbi-page-tab" data-project="project2">
+                            <i data-lucide="cup-soda"></i> Café Beverage Sales
+                        </button>
+                        <button class="pbi-page-tab" data-project="project3">
+                            <i data-lucide="line-chart"></i> Company Sales & Branches
+                        </button>
+                        <button class="pbi-page-tab" data-project="project4">
+                            <i data-lucide="user-minus"></i> Customer Churn Analysis
+                        </button>
+                    </aside>
+
+                    <!-- Main Report Stage -->
+                    <div class="pbi-stage" id="pbi-stage-content">
+
+                        <!-- PROJECT 1: HR ATTRITION -->
+                        <div class="pbi-project-view active-view" id="project1-view">
+                            <div class="view-header">
+                                <h2>Employee Retention & Attrition Drivers Dashboard</h2>
+                                <p class="project-tags">SQL • Power BI • DAX • Executive Report</p>
+                            </div>
+
+                            <!-- KPI metrics block -->
+                            <div class="pbi-kpis">
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-hr-attrition-rate">16.1%</div>
+                                    <div class="pbi-kpi-lbl">ATTRITION RATE</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-hr-active-emp">1,233</div>
+                                    <div class="pbi-kpi-lbl">ACTIVE EMPLOYEES</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-hr-avg-age">37.2 Yrs</div>
+                                    <div class="pbi-kpi-lbl">AVERAGE TENURE</div>
+                                </div>
+                            </div>
+
+                            <div class="pbi-charts-grid">
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Attrition Drivers by Department</div>
+                                    <div class="chart-wrapper"><canvas id="project1-chart1"></canvas></div>
+                                </div>
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Attrition Rate by Role & Tenure</div>
+                                    <div class="chart-wrapper"><canvas id="project1-chart2"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="project-details-text">
+                                <strong>Business Insights & Core Impact:</strong> Analyzed historical employee profiles
+                                to isolate workforce churn drivers. Identified that employees in Sales roles with tenure
+                                &lt; 2 years represent a 43% attrition liability. Provided dashboard interface allowing
+                                the HR VP to adjust salary tiers and project attrition mitigations.
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 2: CAFE BEVERAGE SALES -->
+                        <div class="pbi-project-view hide-view" id="project2-view">
+                            <div class="view-header">
+                                <h2>Café Beverage Revenue & Performance Dashboard</h2>
+                                <p class="project-tags">Python • Excel • Pivot Tables • Data Cleansing</p>
+                            </div>
+
+                            <div class="pbi-kpis">
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-cafe-revenue">$342.5K</div>
+                                    <div class="pbi-kpi-lbl">TOTAL REVENUE</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-cafe-transactions">18.4K</div>
+                                    <div class="pbi-kpi-lbl">TOTAL TRANSACTIONS</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-cafe-top-cat">Espresso</div>
+                                    <div class="pbi-kpi-lbl">TOP CATEGORY BY VOL</div>
+                                </div>
+                            </div>
+
+                            <div class="pbi-charts-grid">
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Monthly Revenue Stream</div>
+                                    <div class="chart-wrapper"><canvas id="project2-chart1"></canvas></div>
+                                </div>
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Sales Share by Product Category</div>
+                                    <div class="chart-wrapper"><canvas id="project2-chart2"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="project-details-text">
+                                <strong>Business Insights & Core Impact:</strong> Cleaned café operational ledger
+                                comprising over 18,000 retail records. Optimized product hierarchy classifications. The
+                                dashboard reveals that coffee-based drinks comprise 62% of revenue but specialty milk
+                                additives yield the highest profit margins, driving menu design choices.
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 3: COMPANY SALES -->
+                        <div class="pbi-project-view hide-view" id="project3-view">
+                            <div class="view-header">
+                                <h2>Company Sales & Branch Profitability Dashboard</h2>
+                                <p class="project-tags">SQL Server • Power BI • Row-Level Security</p>
+                            </div>
+
+                            <div class="pbi-kpis">
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-sales-gross">$2.84M</div>
+                                    <div class="pbi-kpi-lbl">GROSS REVENUE</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-sales-profit">$689K</div>
+                                    <div class="pbi-kpi-lbl">NET PROFIT (24.2%)</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-sales-top-branch">Branch North</div>
+                                    <div class="pbi-kpi-lbl">LEADING REGION</div>
+                                </div>
+                            </div>
+
+                            <div class="pbi-charts-grid">
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Branch Profit Margin & Ranking</div>
+                                    <div class="chart-wrapper"><canvas id="project3-chart1"></canvas></div>
+                                </div>
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Quarterly Profit Growth & Targets</div>
+                                    <div class="chart-wrapper"><canvas id="project3-chart2"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="project-details-text">
+                                <strong>Business Insights & Core Impact:</strong> Consolidated commercial inputs from
+                                five geographic branches. Developed custom SQL stored procedures to load and
+                                cross-examine profitability. Discovered a 14% margin degradation in Branch West due to
+                                rising logistics overhead. Formulated automated target metrics to prompt branch alerts.
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 4: CUSTOMER CHURN -->
+                        <div class="pbi-project-view hide-view" id="project4-view">
+                            <div class="view-header">
+                                <h2>Customer Churn Analytics & Prediction Dashboard</h2>
+                                <p class="project-tags">Python • Scikit-Learn • Plotly • Cohort Analysis</p>
+                            </div>
+
+                            <div class="pbi-kpis">
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-churn-rate">22.4%</div>
+                                    <div class="pbi-kpi-lbl">CHURN RATE</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-churn-risk-users">843</div>
+                                    <div class="pbi-kpi-lbl">HIGH-RISK PROFILES</div>
+                                </div>
+                                <div class="pbi-kpi-box">
+                                    <div class="pbi-kpi-num" id="pbi-churn-ltv">$1.2M</div>
+                                    <div class="pbi-kpi-lbl">LTV LOSS EXPOSURE</div>
+                                </div>
+                            </div>
+
+                            <div class="pbi-charts-grid">
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Churn Probability by Contract Type</div>
+                                    <div class="chart-wrapper"><canvas id="project4-chart1"></canvas></div>
+                                </div>
+                                <div class="pbi-chart-card">
+                                    <div class="chart-title">Risk Factors Breakdown</div>
+                                    <div class="chart-wrapper"><canvas id="project4-chart2"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="project-details-text">
+                                <strong>Business Insights & Core Impact:</strong> Modeled risk scores for a telecom
+                                customer base. Determined that customers with month-to-month contracts and visual
+                                support tickets have a 67% churn probability within 90 days. Recommended targeted
+                                pricing plans and pro-active feedback channels to salvage 18% of high-risk revenue.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DATA STORYTELLING SECTION ================= -->
+        <section id="story" class="dashboard-section">
+            <div class="section-badge">INSIGHT_ENGINE // SCROLL_STORYTELLING</div>
+
+            <div class="story-container">
+                <div class="story-scroll-pane">
+
+                    <div class="story-insight-slide active-slide" data-story-step="0">
+                        <h3>Chapter 1: The Retail Churn Threat</h3>
+                        <p>Every commercial entity struggles with retention. For this retail conglomerate, initial raw
+                            data showed a steady attrition vector. Our task was to map this customer leak. Watch how
+                            isolating contract structures changes the prediction matrix.</p>
+                        <div class="slide-metric">CHURN SPIKE: <span class="highlight-cyan">+12% YoY</span></div>
+                    </div>
+
+                    <div class="story-insight-slide" data-story-step="1">
+                        <h3>Chapter 2: The Contract Variable</h3>
+                        <p>By splitting transactions, we isolated Month-to-Month accounts versus 1-Year/2-Year
+                            commitments. The results were stark: Month-to-Month accounts were leaking at 4x the rate of
+                            annual agreements. This single insight redirected customer onboarding focus.</p>
+                        <div class="slide-metric">CONTRACT SHIFT RISK: <span class="highlight-purple">67% Churn
+                                Prob.</span></div>
+                    </div>
+
+                    <div class="story-insight-slide" data-story-step="2">
+                        <h3>Chapter 3: Actionable Customer Salvage</h3>
+                        <p>Instead of blanket discounts, we targeted clients displaying high support-ticket frequencies
+                            combined with monthly billing. By deploying proactive support and offering a discounted
+                            6-month loyalty trial, the churn trajectory was flattened.</p>
+                        <div class="slide-metric">RECOVERED PIPELINE: <span class="highlight-green">$240K Est.
+                                LTV</span></div>
+                    </div>
+
+                </div>
+
+                <div class="story-visualization-pane glass-card">
+                    <div class="story-chart-header">
+                        <span class="story-chart-title" id="story-visual-title">Global Churn Distribution</span>
+                        <span class="story-status-tag">STORY_NODE_04</span>
+                    </div>
+                    <div class="story-chart-wrapper">
+                        <canvas id="storytelling-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GITHUB ANALYTICS CENTER ================= -->
+        <section id="github" class="dashboard-section">
+            <div class="section-badge">CODE_INTEGRATION // GITHUB_HUB</div>
+
+            <div class="github-dashboard glass-card">
+                <div class="gh-profile-header">
+                    <div class="gh-user-info">
+                        <i class="fa-brands fa-github gh-large-icon"></i>
+                        <div>
+                            <h3>mazenismail17</h3>
+                            <p class="gh-link">github.com/mazenismail17</p>
+                        </div>
+                    </div>
+                    <div class="gh-counters">
+                        <div class="gh-counter-box">
+                            <span class="gh-c-val">28</span>
+                            <span class="gh-c-lbl">REPOSITORIES</span>
+                        </div>
+                        <div class="gh-counter-box">
+                            <span class="gh-c-val">342</span>
+                            <span class="gh-c-lbl">CONTRIBUTIONS (YTD)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gh-grid">
+                    <div class="gh-left">
+                        <h4 class="gh-subheading"><i data-lucide="git-commit"></i> Contribution Activity</h4>
+                        <!-- Mock GitHub Grid -->
+                        <div class="github-grid-container">
+                            <div class="github-grid-months">
+                                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+                            </div>
+                            <div class="github-heatmap" id="github-heatmap-grid">
+                                <!-- Populated dynamically with green blocks by JS -->
+                            </div>
+                            <div class="heatmap-legend">
+                                <span>Less</span>
+                                <span class="legend-box lvl-0"></span>
+                                <span class="legend-box lvl-1"></span>
+                                <span class="legend-box lvl-2"></span>
+                                <span class="legend-box lvl-3"></span>
+                                <span class="legend-box lvl-4"></span>
+                                <span>More</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gh-right">
+                        <h4 class="gh-subheading"><i data-lucide="pie-chart"></i> Repository Language Mix</h4>
+                        <div class="gh-chart-wrapper">
+                            <canvas id="github-lang-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gh-repos-list">
+                    <h4 class="gh-subheading"><i data-lucide="folder-git-2"></i> Featured Analytical Codebases</h4>
+                    <div class="gh-repo-cards">
+                        <div class="gh-repo-card">
+                            <div class="gh-repo-header">
+                                <span class="repo-name">hr-attrition-dax-pipeline</span>
+                                <span class="repo-visibility">Public</span>
+                            </div>
+                            <p class="repo-desc">ETL workflows and DAX measures for employee demographics and attrition
+                                alerts.</p>
+                            <div class="repo-footer">
+                                <span><span class="lang-color lang-sql"></span> SQL</span>
+                                <span><i class="fa-regular fa-star"></i> 12</span>
+                            </div>
+                        </div>
+                        <div class="gh-repo-card">
+                            <div class="gh-repo-header">
+                                <span class="repo-name">churn-telecom-predictor</span>
+                                <span class="repo-visibility">Public</span>
+                            </div>
+                            <p class="repo-desc">Machine Learning pipelines in Python analyzing high-risk client
+                                features and cohorts.</p>
+                            <div class="repo-footer">
+                                <span><span class="lang-color lang-python"></span> Python</span>
+                                <span><i class="fa-regular fa-star"></i> 18</span>
+                            </div>
+                        </div>
+                        <div class="gh-repo-card">
+                            <div class="gh-repo-header">
+                                <span class="repo-name">cafe-sales-etl-notebook</span>
+                                <span class="repo-visibility">Public</span>
+                            </div>
+                            <p class="repo-desc">Jupyter notebook handling structural cleaning and categorizations of
+                                cafe data logs.</p>
+                            <div class="repo-footer">
+                                <span><span class="lang-color lang-jupyter"></span> Jupyter</span>
+                                <span><i class="fa-regular fa-star"></i> 8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EXPERIENCE & TIMELINE ================= -->
+        <section id="experience" class="dashboard-section">
+            <div class="section-badge">CHRONOLOGY // PROF_EXPERIENCE</div>
+
+            <div class="experience-layout">
+                <div class="experience-timeline glass-card">
+                    <div class="timeline-header">
+                        <h3>Professional Internship Log</h3>
+                        <span class="timeline-period">2025 - Present</span>
+                    </div>
+
+                    <div class="timeline-nodes">
+                        <!-- Node 1 -->
+                        <div class="timeline-node">
+                            <div class="node-marker"><span class="marker-glow"></span></div>
+                            <div class="node-content">
+                                <div class="node-date">JUL 2025 - SEP 2025</div>
+                                <h4 class="node-title">Data Analyst Intern</h4>
+                                <div class="node-company">Arabian Academy</div>
+                                <ul class="node-details">
+                                    <li>Architected executive operational dashboards, consolidating key logistics
+                                        indicators into singular control screens.</li>
+                                    <li>Conducted robust database transformations (ETL) on legacy servers, speeding up
+                                        dashboard queries by 35%.</li>
+                                    <li>Delivered structured analytics packages and pipeline reporting systems to key
+                                        business stakeholders.</li>
+                                    <li>Supported business analysts with ad-hoc statistical inquiries and trend reports.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Impact Matrix -->
+                <div class="impact-console glass-card">
+                    <div class="terminal-header">
+                        <span class="terminal-title">BUSINESS_IMPACT_METRICS.LOG</span>
+                    </div>
+                    <div class="impact-cards">
+                        <div class="impact-card">
+                            <div class="impact-num">35%</div>
+                            <div class="impact-desc">
+                                <strong>Improved Reporting Efficiency</strong>
+                                <p>Re-indexed operational databases, significantly decreasing load intervals on key data
+                                    views.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-num">80%</div>
+                            <div class="impact-desc">
+                                <strong>Automated Data Processes</strong>
+                                <p>Replaced complex monthly spreadsheets with automated workflows, preventing processing
+                                    issues.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-num">A+</div>
+                            <div class="impact-desc">
+                                <strong>Enhanced Decision Making</strong>
+                                <p>Integrated dynamic forecasting models, providing clear decision criteria to
+                                    department heads.</p>
+                            </div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-num">92%</div>
+                            <div class="impact-desc">
+                                <strong>Actionable Insights</strong>
+                                <p>Isolated key retention risks via statistical charts, prompting direct corrective
+                                    outreach.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic/Org Badges -->
+            <div class="badges-wrapper glass-card">
+                <div class="badge-header">Academic Badges & Camp Involvements</div>
+                <div class="badges-grid">
+                    <div class="badge-item" title="Computer Science Camp - PES"><span class="badge-txt">PES CAMP</span>
+                    </div>
+                    <div class="badge-item" title="Google Certified Insights Developer"><span
+                            class="badge-txt">Google</span></div>
+                    <div class="badge-item" title="Amazon Business Analytics Coursework"><span
+                            class="badge-txt">Amazon</span></div>
+                    <div class="badge-item" title="Information Technology Industry Development Agency"><span
+                            class="badge-txt">ITIDA</span></div>
+                    <div class="badge-item" title="Technology Innovation & Entrepreneurship Center"><span
+                            class="badge-txt">TIEC</span></div>
+                    <div class="badge-item" title="STEM Science, Tech, Engineering & Math Support"><span
+                            class="badge-txt">STEM</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= WHY WORK WITH ME ================= -->
+        <section id="why-me" class="dashboard-section">
+            <div class="section-badge">VALUE_PROPOSITION // METRIC_MATCH</div>
+
+            <h2 class="section-title text-center">Why Work With Me?</h2>
+
+            <div class="why-grid">
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i data-lucide="brain"></i></div>
+                    <h4>Data-Driven Thinking</h4>
+                    <p>Decisions backed by rigorous modeling, statistical validation, and clean empirical logic.</p>
+                </div>
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i data-lucide="bar-chart-3"></i></div>
+                    <h4>Business Intelligence</h4>
+                    <p>Translating databases into operational metrics aligned directly with strategic business models.
+                    </p>
+                </div>
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i data-lucide="file-spreadsheet"></i></div>
+                    <h4>Executive Reporting</h4>
+                    <p>Structuring clean dashboards that communicate health scores instantly to C-Suite stakeholders.
+                    </p>
+                </div>
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i data-lucide="target"></i></div>
+                    <h4>KPI Development</h4>
+                    <p>Aligning data queries with operational targets to accurately log departmental performance.</p>
+                </div>
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i data-lucide="puzzle"></i></div>
+                    <h4>Problem Solving</h4>
+                    <p>Transforming complex technical bottlenecks into clean, structured data pipelines.</p>
+                </div>
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i data-lucide="messages-square"></i></div>
+                    <h4>Stakeholder Communication</h4>
+                    <p>Bridging the gap between software engineers, technical systems, and business leaders.</p>
+                </div>
+                <div class="why-card glass-card">
+                    <div class="why-icon"><i data-lucide="compass"></i></div>
+                    <h4>Analytical Thinking</h4>
+                    <p>Analyzing datasets with statistical depth to separate true trends from temporary noise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT COMMAND CENTER ================= -->
+        <section id="contact" class="dashboard-section">
+            <div class="section-badge">COMMUNICATIONS // SECURE_TRANSMISSION</div>
+
+            <div class="contact-grid">
+                <div class="contact-info-panel glass-card">
+                    <h3>Command Terminal</h3>
+                    <p>Establish direct contact for business intelligence consultancies, operations analysis, or data
+                        role recruitments.</p>
+
+                    <div class="direct-channels">
+                        <a href="mailto:mazenismail17@gmail.com" class="channel-link">
+                            <i data-lucide="mail"></i>
+                            <div>
+                                <span class="channel-lbl">EMAIL CHANNEL</span>
+                                <span class="channel-val">mazenismail17@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+201124212605" class="channel-link">
+                            <i data-lucide="phone"></i>
+                            <div>
+                                <span class="channel-lbl">DIRECT LINE</span>
+                                <span class="channel-val">+201124212605</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/mazenismail17" target="_blank" rel="noopener"
+                            class="channel-link">
+                            <i class="fa-brands fa-linkedin-in text-blue"></i>
+                            <div>
+                                <span class="channel-lbl">LINKEDIN BRIDGE</span>
+                                <span class="channel-val">linkedin.com/in/mazenismail17</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/mazenismail17" target="_blank" rel="noopener" class="channel-link">
+                            <i class="fa-brands fa-github text-purple"></i>
+                            <div>
+                                <span class="channel-lbl">GITHUB REPOSITORY</span>
+                                <span class="channel-val">github.com/mazenismail17</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-console glass-card">
+                    <div class="terminal-header">
+                        <span class="terminal-title">SEND_ENCRYPTED_MESSAGE.sh</span>
+                        <span class="console-security">SECURE SSL // AES-256</span>
+                    </div>
+
+                    <form id="contact-form" class="secure-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-sender-name">SENDER_ID (Name)</label>
+                                <input type="text" id="form-sender-name" required placeholder="Enter name..."
+                                    class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-sender-email">REPLY_NODE (Email)</label>
+                                <input type="email" id="form-sender-email" required placeholder="Enter email..."
+                                    class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">COMMUNICATION_SUBJECT</label>
+                            <input type="text" id="form-subject" required placeholder="Enter subject..."
+                                class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">MESSAGE_BODY</label>
+                            <textarea id="form-message" required rows="6" placeholder="Enter message text..."
+                                class="form-input"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="contact-submit-btn">
+                            <i data-lucide="send"></i> TRANSMIT_PAYLOAD()
+                        </button>
+                    </form>
+                    <div id="form-status" class="form-status-log"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Footer -->
+        <footer class="system-footer">
+            <div class="footer-left">
+                <span>© 2026 MAZEN ISMAIL ALI. ALL RIGHTS RESERVED.</span>
+                <span class="divider">|</span>
+                <span>SECURITY: ENABLED</span>
+            </div>
+            <div class="footer-right">
+                <span>DESIGN_VER: 2.1.0_PROD</span>
+                <span class="divider">|</span>
+                <span>BUILT_WITH: VANILLA_SYSTEM</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ATS Hidden Semantic Document for Resume Parsers -->
+    <section class="ats-hidden" aria-hidden="true" style="display:none !important;">
+        <h1>Mazen Ismail Ali</h1>
+        <p>Data Analyst | Business Intelligence Analyst | Data Storyteller</p>
+        <p>Email: mazenismail17@gmail.com | Phone: +201124212605</p>
+        <p>LinkedIn: linkedin.com/in/mazenismail | GitHub: github.com/mazenismail17</p>
+        <h2>Education</h2>
+        <p>Undergraduate Computers and Data Science Student, GPA 3.2/4.0</p>
+        <p>Specialization: Business Intelligence, Decision Support Systems</p>
+        <h2>Experience</h2>
+        <h3>Arabian Academy - Data Analyst Intern (July 2025 - September 2025)</h3>
+        <ul>
+            <li>Developed operational executive dashboards and data pipelines.</li>
+            <li>Conducted ETL database cleaning and structured data analysis.</li>
+            <li>Designed client reporting systems using SQL and Excel.</li>
+        </ul>
+        <h2>Technical Skills</h2>
+        <p>Programming: Python, SQL, R, Java, C++</p>
+        <p>Data Analytics: Pandas, NumPy, Power BI, Power Query, DAX, Excel</p>
+        <p>Data Visualization: Matplotlib, Seaborn, Plotly, Power BI Developer</p>
+        <p>Cloud & Big Data: AWS, Apache Spark, MS SQL Server, MySQL</p>
+        <h2>Projects</h2>
+        <h3>HR Attrition Analytics Dashboard</h3>
+        <p>Analyzed employee retention and attrition metrics, modeling key churn patterns using SQL and Power BI
+            dashboard layouts.</p>
+        <h3>Café Beverage Sales Dashboard</h3>
+        <p>Cleaned transactional data logs and structured product hierarchies to track quarterly revenue streams.</p>
+        <h3>Company Sales & Branch Profitability Dashboard</h3>
+        <p>Aggregated commercial revenue points from multiple branches, deploying SQL stored procedures and performance
+            tracking KPIs.</p>
+        <h3>Customer Churn Analysis Dashboard</h3>
+        <p>Modeled customer risk scores and designed cohort retention profiles using Python, Pandas and visualization
+            frameworks.</p>
+    </section>
+
+    <!-- Lucide Icons CDN Init -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Core Application Logic -->
+    <script src="script.js"></script>
+</body>
+
+</html>
